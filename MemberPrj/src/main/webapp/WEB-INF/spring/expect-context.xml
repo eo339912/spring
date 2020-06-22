@@ -11,7 +11,7 @@
 	<!-- AOP 설정 -->
 	<aop:config>
 		<aop:aspect ref="logprint"><!-- 실제동작할 클레스 -->
-			<aop:pointcut expression="excution(* co.micol.hello..*Impl.*(..))" id="allpointcut"/>
+			<aop:pointcut id="allpointcut"  expression="execution(* co.micol.hello..Impl.*Impl.*(..)) or execution(* co.micol.hello..Impl.*Impl.*(..))" />
 			<aop:after method="printLog" pointcut-ref="allpointcut"/>
 		</aop:aspect>
 	</aop:config>
