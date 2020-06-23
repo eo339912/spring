@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.way.prj.member.map.MemberMap">
+	<select id="getMemberList" resultType="co.way.prj.member.service.MemberVO">
+		SELECT * FROM member
+	</select>
+	<select id="getMember" resultType="co.way.prj.member.service.MemberVO">
+		SELECT * FROM member WHERE id=#{id}
+	</select>
+	<insert id="setMemberInsert">
+		INSERT INTO member VALUE(#{id}, #{name}, #{pwd}, #{hobby}, #{gender},
+								#{religion}, #{introduction}, #{regdt})
+	</insert>
+	<delete id="setMemberDelete">
+		DELETE FROM member WHERE id=#{id}
+	</delete>
+	<update id="setMemberUpdate">
+		UPDATE member
+		SET  id=#{id}, name=#{name}, pwd=#{pwd}, hobby=#{hobby}, gender=#{gender},
+								religion=#{religion}, introduction=#{introduction}, regdt=#{regdt}
+		WHERE id=#{id}
+	</update>
+</mapper>
